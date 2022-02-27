@@ -11,6 +11,7 @@
     "license": "ISC",
     "dependencies": {
         "@adiwajshing/baileys": "^3.5.3",
+        "@ffmpeg-installer/ffmpeg": "^1.1.0",
         "@nuintun/qrcode": "^3.0.1",
         "@vitalets/google-translate-api": "^7.0.0",
         "chalk": "^4.1.1",

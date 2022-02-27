@@ -1,5 +1,7 @@
 const { MessageType, MimetypeMap } = require("@adiwajshing/baileys");
-const ffmpeg = require("fluent-ffmpeg");
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+const ffmpeg = require('fluent-ffmpeg');
+ffmpeg.setFfmpegPath(ffmpegPath);
 const fs = require("fs");
 const inputSanitization = require("../sidekick/input-sanitization");
 const { JSDOM } = require("jsdom");
@@ -56,7 +58,7 @@ module.exports = {
                             }).catch(err => inputSanitization.handleError(err, client, BotsApp));
                         })
                         .on('error', async() => {
-                            inputSanitization.handleError(err, client, BotsApp)
+                            // inputSanitization.handleError(err, client, BotsApp)
                             await client.deleteMessage(BotsApp.chatId, {
                                 id: downloading.key.id,
                                 remoteJid: BotsApp.chatId,
